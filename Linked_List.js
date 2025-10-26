@@ -1,10 +1,11 @@
-function LinkedList() {
+export function LinkedList() {
   let head = NodeF();
   let tail = NodeF();
 
   function append(value) {
     if (head.value == null) {
       head.value = value;
+      tail.value = value;
       return;
     }
 
@@ -23,6 +24,10 @@ function LinkedList() {
       head.value = value;
       return;
     }
+    if (tail.value == null) {
+        tail.value = value;
+        return;
+    }
 
     let newNode = NodeF(value);
     newNode.nextNode = head;
@@ -30,7 +35,7 @@ function LinkedList() {
   }
 
   function size() {
-    if (head.value == 0) {
+    if (head.value == null) {
       return 0;
     }
 
@@ -121,7 +126,7 @@ function LinkedList() {
   function toString() {
     if (head.value == null) {
       console.log("No head node");
-      return;
+      return '';
     }
 
     let currentNode = head;
