@@ -25,8 +25,8 @@ export function LinkedList() {
       return;
     }
     if (tail.value == null) {
-        tail.value = value;
-        return;
+      tail.value = value;
+      return;
     }
 
     let newNode = NodeF(value);
@@ -126,7 +126,7 @@ export function LinkedList() {
   function toString() {
     if (head.value == null) {
       console.log("No head node");
-      return '';
+      return "";
     }
 
     let currentNode = head;
