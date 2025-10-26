@@ -165,7 +165,12 @@ export function LinkedList() {
   function removeAt(index) {
     try {
       if (index == 0) {
-        head = head.nextNode;
+        if (head.nextNode) {
+            head = head.nextNode;
+            return;
+        }
+        head.value = null;
+        head.nextNode = null;
         return;
       }
 
